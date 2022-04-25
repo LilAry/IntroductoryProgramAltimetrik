@@ -14,7 +14,7 @@ JavaScript is a programming language and like other programming languages it has
 ## HOW TO USE JAVASCRIPT ON YOUR WEBSITE PROJECT?
 There are 2 main methods: **INTERNAL JAVASCRIPT** and **EXTERNAL JAVASCRIPT**
   
-  1.When the script codes are presented in the same HTML file of it witch be used, we say that it is an **Internal Javascript** . The codes are displayed in-between the open `(<script>)` and close `(</script>)` script tags. 
+  1.Basically, when the script codes are presented in the same HTML file of it witch be used, we say that it is an **Internal Javascript** . 
   
   ```html
 <!-- index.html -->
@@ -24,7 +24,7 @@ There are 2 main methods: **INTERNAL JAVASCRIPT** and **EXTERNAL JAVASCRIPT**
     <title>Javascript Syntax and Basic Constructs</title>
   </head>
   <body>
-    <h1>Hello</h1>
+    <h1>FIRST CARD OF JAVASCRIPT</h1>
 
     <!-- Javascript area -->
     <script>
@@ -37,7 +37,7 @@ There are 2 main methods: **INTERNAL JAVASCRIPT** and **EXTERNAL JAVASCRIPT**
 GLOSSARY OF FUNCTIONS:
 `console.log( 'EXAMPLE' )` : Is used to print any kind of variables defined before in it or to just print any message that needs to be displayed to the user.
 
-  2.When the script codes are placed in another file and are simply referenced in the HTML file of which it is to be used, we can say that it is an **External Javascript**
+  2.Whenever the script codes are placed in another file and are simply referenced in the HTML, we can say that it is an **External Javascript**
  
   ```js
   // script.js
@@ -48,5 +48,5 @@ In our `index.html`, we could simply replace the Javascript area with `<script s
 ## Syntax and Basic Constructs
  1. Every statement should end with a semi-colon `;`
  2. Comments: for single line use `//` and for multiline use `/* content */`
- 3. Variables: These are like containers used for saving values. Instead of repeating a value for different uses, you could just assign it to a variable. The `var` keyword is used.
+ 3. Variables: These are like containers used for saving values. Instead of repeating a value for different uses, you could just assign it to a variable. The `var` keyword is used for this.
  
