@@ -12,7 +12,25 @@ Maybe it's not engaging enough or it's not as creative as you want it to be. Now
 It is an object based scripting language, which supports polymorphism, encapsulation and to some extent inheritance as well.
 JavaScript is a programming language and like other programming languages it has its own syntax. If we do not write a syntax that JavaScript understands, it will raise different types of errors.
 ## HOW TO USE JAVASCRIPT ON YOUR WEBSITE PROJECT?
-There are 2 ways: **INTERNAL JAVASCRIPT** and **EXTERNAL JAVASCRIPT**
+There are 2 main methods: **INTERNAL JAVASCRIPT** and **EXTERNAL JAVASCRIPT**
+  When the script codes are presented in the same HTML file of it witch be used, we say that it is an **Internal Javascript* 
+  
+  ```
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Javascript Syntax and Basic Constructs</title>
+  </head>
+  <body>
+    <h1>Hello</h1>
 
+    <!-- Javascript area -->
+    <script>
+      console.log('Hey, Javascript!!');
+    </script>
+  </body>
+</html>
+```
 
 
