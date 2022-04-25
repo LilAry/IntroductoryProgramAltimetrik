@@ -44,3 +44,9 @@ GLOSSARY OF FUNCTIONS:
 console.log('Hey, Javascript!!');
 ```
 In our `index.html`, we could simply replace the Javascript area with `<script src='script.js'></script>.` The `src` attribute means source which contains the location of the javascript file we are trying to reference.
+
+## Syntax and Basic Constructs
+ 1. Every statement should end with a semi-colon `;`
+ 2. Comments: for single line use `//` and for multiline use `/* content */`
+ 3. Variables: These are like containers used for saving values. Instead of repeating a value for different uses, you could just assign it to a variable. The `var` keyword is used.
+ 
