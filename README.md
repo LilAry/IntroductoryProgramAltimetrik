@@ -45,10 +45,10 @@ console.log('Hey, Javascript!!');
 In our `index.html`, we could simply replace the Javascript area with `<script src='script.js'></script>.` The `src` attribute means source which contains the location of the javascript file we are trying to reference.
 
 ## Syntax and Basic Constructs
- 1. Every statement should end with a semi-colon `;`
+ 1. Every statement should end with a semicolon `;`
  2. Comments: for single line use `//` and for multiline use `/* content */`
  3. Variables: These are like containers used for saving values. Instead of repeating a value for different uses, you could just assign it to a variable. The `var` keyword is used for this.
- 4. Operators: They can be Aritmetic operators, such as, +, - , =, * etc. And also Assignment Operators, those are used to assign values to variables. They include `=`, `/=`, `*=`,` %=`, `-=`, `+=`.
+ 4. Operators: They can be Arithmetic operators, such as, +, - , =, * etc. And also Assignment Operators, those are used to assign values to variables. They include `=`, `/=`, `*=`,` %=`, `-=`, `+=`.
  
  ## Data Types
- This can be divided in 2 types, the non-modifiable or unmutable, named **Primitive Data Types** and the modifiable or mutable, named **Non-Primitive Data Types** .
+ This can be divided in 2 types, the non-modifiable or immutable, named **Primitive Data Types** and the modifiable or mutable, named **Non-Primitive Data Types** .
