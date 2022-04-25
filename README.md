@@ -13,9 +13,9 @@ It is an object based scripting language, which supports polymorphism, encapsula
 JavaScript is a programming language and like other programming languages it has its own syntax. If we do not write a syntax that JavaScript understands, it will raise different types of errors.
 ## HOW TO USE JAVASCRIPT ON YOUR WEBSITE PROJECT?
 There are 2 main methods: **INTERNAL JAVASCRIPT** and **EXTERNAL JAVASCRIPT**
-  When the script codes are presented in the same HTML file of it witch be used, we say that it is an **Internal Javascript* 
+  When the script codes are presented in the same HTML file of it witch be used, we say that it is an **Internal Javascript** 
   
-  ```
+  ```html
 <!-- index.html -->
 <!DOCTYPE html>
 <html>
