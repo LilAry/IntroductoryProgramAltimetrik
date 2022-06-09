@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\carousel"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true,
+		"liveServer.settings.multiRootWorkspaceName": "pagina ahre"
+	}
+}

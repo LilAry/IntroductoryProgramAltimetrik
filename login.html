@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMEFINDER-Login</title>
+    <link rel="stylesheet" href="stylelogin.css">
+    <script src="validation.js" defer></script>
+    <script src="login.js" defer></script>
+    <script src="carousel.js" defer></script>
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <div class="imagee">
+        <a href="index.html">
+            <img class="imgg"  src="./img/GAMEFINDER.png" alt="Logo" >
+        </a>
+    </div>
+    <div class="container">
+        <div class="image">
+            <img src="./img/BG.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="./img/unsplash_jCorhBYp_C4.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="./img/BG.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="./img/unsplash_jCorhBYp_C4.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="./img/BG.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="./img/unsplash_jCorhBYp_C4.jpg" alt="">
+        </div>
+
+        <div class="button">
+            <a onclick="nextimg(-1)" class="prev"><img class="prev-button"  src="./img/botoncarrusel.svg" alt="previusslide" ></a>
+            <a onclick="nextimg(1)" class="next"><img class="next-button"  src="./img/botoncarrusel.svg" alt="nextslide" ></a>
+        </div>
+
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+        </div>
+    </div>
+    
+    <div class="registro">
+        <h1 class="titulo">Welcome! Log in or register</h1>
+        <h3 class="subtitulo">Log in to find the games you're looking for!</h3>
+        <div id="error"></div>
+        <form class="login" id="form" action="/" method="GET">
+            <div>
+                <input class="login-form-items" id="email" type="email" placeholder="Email" required>
+            </div>
+            <div>
+                <input class="login-form-items" id="password" name="password" type="password" placeholder="Password">
+            </div>
+            <div class="option">
+
+                <div class="left-option">
+                    <input type="checkbox" id="remember">
+                    <label for="rememberme">Remember me</label>
+                </div>
+                <div class="right-option">
+                    <a class="forgot-psw" href="login.html" >Forgot password?</a>
+                </div class="right-option">
+            </div>
+            <input class="login-button" type="submit" value="Log in">  
+        </form>
+        
+        <div class = "reg-not">
+            <span class="spansito">Not registered yet?</span>
+            <a class="Log-In" >Register now</a>
+        </div>
+        <div class="or-line">
+            <hr><span class="or">or</span><hr>
+        </div>
+        <div class="button-social">
+                <img class="icon"  src="./img/facebookicon.svg" alt="Logo Facebook" >
+                <button class="button-s">Login with Facebook</button>
+        </div>
+        <div class="button-social">
+            <img class="icon"  src="./img/twittericon.svg" alt="Logo Twitter" >
+            <button class="button-s">Login with Twitter</button>
+        </div>
+        <div class="button-social">
+            <img class="icon"  src="./img/googleicon.svg" alt="Logo Google" >
+            <button class="button-s">Login with Google</button>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

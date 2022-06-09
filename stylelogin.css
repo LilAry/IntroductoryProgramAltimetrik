@@ -1,0 +1,346 @@
+@font-face {
+    font-family: Exo;
+    src: url(fonts/Exo-VariableFont_wght.ttf) format('truetype');
+}
+@font-face {
+    font-family: Opensans;
+    src: url(fonts/OpenSans-VariableFont_wdth\,wght.ttf) format('truetype');
+}
+*{
+  box-sizing:border-box;
+}
+html{
+    font-size: 62.5%;
+    width: 100%;
+}
+body{
+    /* background: url(./img/BG.jpg);
+    background-size:cover;
+    background-repeat: no-repeat; */
+    position: relative;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+
+}
+.imagee{
+    position: absolute;
+    z-index: 7;
+    left: 5.323rem;
+    right: 4.42%;
+    top: 4.427rem;
+    bottom: 21.62%;
+    
+}
+.container{
+    z-index: 6;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    position: relative;
+}
+
+.container .image{
+    display: none;
+}
+
+.container .image img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.container .button{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.container .button a{
+    width: 43px;
+    height: 43px;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    background: #515151;
+    font-size: 20px;
+    user-select: none;
+    opacity: 80%;
+}
+
+.container .button .prev{
+    position: absolute;
+    left: 3.2rem;
+    border-radius: 50%;
+    transform: rotate(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container .button .next{
+    position: absolute;
+    right: 3.2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dots{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 32px;
+    left: 45%;
+    background: #515151;
+    padding: 5px 10px;
+    width: 120px;
+    height: 27px;
+    border-radius: 18px;
+}
+
+.dot{
+    cursor: pointer;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    opacity: 25%;
+    display: inline-block;
+    margin: 0 2px;
+}
+.active, .dot:hover{
+    opacity: 100%;
+}  
+.registro{
+    position: absolute;
+    z-index: 8;
+    width: 46.2rem;
+    height: 70.2rem;
+    left: 87.9rem;
+    top: 17.8rem;
+    background: #303030;
+    background-blend-mode: overlay;
+    border-radius: 1.2rem;
+    background-color: rgba(0,0,0,0.5);
+    
+}
+.titulo{
+    font-family: Exo;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.7rem;
+    letter-spacing: 0px;
+    text-align: center;
+    margin-top: 4rem;
+    color: #FFFFFF;
+
+}
+
+.subtitulo{
+    font-family: Exo;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 2.1rem;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+.login-form-items{
+    height: 4.7rem;
+    width: 36.2rem;
+    border-radius: 0.4rem;
+    margin-left: 5rem;
+    margin-bottom: 1.6rem;
+    font-family: 'Exo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding-left: 1.6rem;
+    border-style: none;
+}
+.login-button{
+    height: 4.7rem;
+    width: 36.2rem;
+    text-align: center;
+    background: #4CC986;
+    border-radius: 0.6rem;
+    margin-left: 5rem;
+    margin-top: 2.4rem;
+    border-style: none;
+    font-family: Exo;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.8rem;
+    align-items: center;
+    color: #FFFFFF;
+    margin-bottom: 3.2rem;
+}
+.option
+{
+    display: flex;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.9rem;
+    letter-spacing: 0px;
+    align-items: center;
+    margin-left: 5rem;
+
+}
+.left-option{
+    display: flex;
+    align-items:center;    
+}
+.rigth-option{
+    text-align: right;
+}
+.left-option label{
+    font-family: Exo;
+    color: #FFFFFF;
+    cursor: pointer;
+    /* margin-left: 1.6rem; */
+    margin-right:11rem;
+    display: flex;
+    
+}
+.left-option input[type='checkbox'] {
+    cursor:pointer;
+    opacity:0;
+    position:absolute;
+}
+.left-option label::before {
+    content:'';
+    width:1em;
+    height:1em;
+    border: 0.15rem solid #FFFFFF;
+    border-radius:0.4rem;
+    margin-right: 1.6rem;
+ }
+.left-option input[type='checkbox']:disabled + label,
+.left-option input[type='checkbox']:disabled {
+    opacity: 0;
+    cursor: default;
+}
+.left-option input[type='checkbox']:checked + label::before {
+    content:'\002714';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    background-color:#36B972;
+ }
+ .icon{
+     z-index: 1;
+ }
+.forgot-psw{
+    color:#5FE19B;
+    text-decoration:none;
+    font-family: Opensans;
+}
+.reg-not{
+    margin-bottom: 2.4rem;
+}
+
+.spansito{
+    font-family: Exo;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    margin-left: 12rem;
+    margin-right: 0.52rem;
+    color: #FFFFFF;
+}
+.Log-In{
+    text-indent: .5rem;
+    left: 79.37%;
+    right: 14.72%;
+    font-family: Exo;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.9rem;
+    text-align: right;
+    color: #5FE19B;
+
+}
+.or-line{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.93rem;
+    color: #FFFFFF;
+}
+.or-line hr{
+    width: 14.5rem;
+    height: .21rem;
+    border-top: 1px solid #FFFFFF;
+    margin: 0;
+    
+}
+.or{
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: center;
+    padding-right: 26.47px;
+    padding-left: 26.47px;
+
+}
+
+.button-social{
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 4.7rem;
+    width: 36.2rem;
+    left: 0rem;
+    top: 0rem;
+    margin-left: 5rem;
+    margin-bottom: 2.4rem;
+    border-radius: .6rem;
+    border-color: #FFFFFF;
+    background-color: #303030;
+    border: .2rem solid #FFFFFF;
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer;
+
+}
+.button-s{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-family: Exo;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+    color: #FFFFFF;
+    border-style: hidden;
+    background-color: rgba(0,0,0,0.5);
+}
+.icon{
+    position: absolute;
+    margin-left: 6.1rem;
+}
+/* NOSE PORQUE ESTA BAJA LA OPACIDAD DE MI ICONO :( */
