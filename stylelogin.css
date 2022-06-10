@@ -23,6 +23,30 @@ body{
     height: 100%;
 
 }
+:root{
+    --clr-fonts-light: #515151;
+    --clr-fonts-dark: #ffffff;
+    --clr-box-light: #F0F0F0;
+    --clr-box-dark: rgba(0,0,0,0.5);
+    --clr-social-light: #4CC986;
+    --clr-social-dark: white;
+
+    --font-color: var(--clr-fonts-dark);
+    --box-color: var(--clr-box-dark);
+    --social-color: var(--clr-social-dark);
+}
+.darkmode {
+    --clr-fonts-light: #515151;
+    --clr-fonts-dark: #ffffff;
+    --clr-box-light: #F0F0F0;
+    --clr-box-dark: rgba(0,0,0,0.5);
+    --clr-social-light: #4CC986;
+    --clr-social-dark: white;
+
+    --font-color: var(--clr-fonts-light);
+    --box-color: var(--clr-box-light);
+    --social-color: var(--clr-social-light);
+}
 .imagee{
     position: absolute;
     z-index: 7;
@@ -51,7 +75,54 @@ body{
     object-fit: cover;
     object-position: center;
 }
+.checkboxdlmode {
+    opacity: 0;
+    position: absolute;
+}
+/* .checkbox:checked + .label{
+    background: green;
+} */
+.darkandlightmode label{
+    width: 44px;
+    height: 22px;
+    background-color: #5F81FB;
+    display: flex;
+    border-radius: 23px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    right: 40px;
+    top: 4.7rem;
+    
+    
+}
+input[type=checkbox]:checked + label{
+    background-color: #E1E1E4;
+}
+input[type=checkbox]:checked + label .ball{
+    transform: translateX(-22px);
+}
 
+.darkm{
+    width: 10.25px;
+    height: 6px;
+    margin-right: 3px;
+}
+.lightm{
+    width: 14.05px;
+    height: 6px;
+    margin-left: 2px;
+}
+.ball{
+    width: 18px;
+    height: 18px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    position: absolute;
+    right: 2.5px;
+    transition: transform 0.2s linear;
+}
 .container .button{
     position: absolute;
     top: 50%;
@@ -72,7 +143,7 @@ body{
     align-items: center;
     cursor: pointer;
     color: white;
-    background: #515151;
+    background: var(--box-color);
     font-size: 20px;
     user-select: none;
     opacity: 80%;
@@ -105,7 +176,7 @@ body{
     position: absolute;
     bottom: 32px;
     left: 45%;
-    background: #515151;
+    background: var(--box-color);
     padding: 5px 10px;
     width: 120px;
     height: 27px;
@@ -117,7 +188,7 @@ body{
     height: 7px;
     width: 7px;
     border-radius: 50%;
-    background: #FFFFFF;
+    background: var(--font-color);
     opacity: 25%;
     display: inline-block;
     margin: 0 2px;
@@ -132,10 +203,10 @@ body{
     height: 70.2rem;
     left: 87.9rem;
     top: 17.8rem;
-    background: #303030;
+    /* background: var(--box-color); */
     background-blend-mode: overlay;
     border-radius: 1.2rem;
-    background-color: rgba(0,0,0,0.5);
+    background-color: var(--box-color);
     
 }
 .titulo{
@@ -146,7 +217,7 @@ body{
     letter-spacing: 0px;
     text-align: center;
     margin-top: 4rem;
-    color: #FFFFFF;
+    color: var(--font-color);
 
 }
 
@@ -157,10 +228,22 @@ body{
     line-height: 2.1rem;
     letter-spacing: 0em;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--font-color);
 
 }
+.password{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.password img{
+    cursor: pointer;
+    position:relative;
+    right: 31.15px;
+    bottom: 6px;
+}
 .login-form-items{
+    /* position: relative; */
     height: 4.7rem;
     width: 36.2rem;
     border-radius: 0.4rem;
@@ -173,6 +256,7 @@ body{
     padding-left: 1.6rem;
     border-style: none;
 }
+
 .login-button{
     height: 4.7rem;
     width: 36.2rem;
@@ -210,9 +294,8 @@ body{
 }
 .left-option label{
     font-family: Exo;
-    color: #FFFFFF;
+    color: var(--font-color);
     cursor: pointer;
-    /* margin-left: 1.6rem; */
     margin-right:11rem;
     display: flex;
     
@@ -226,7 +309,7 @@ body{
     content:'';
     width:1em;
     height:1em;
-    border: 0.15rem solid #FFFFFF;
+    border: 0.15rem solid var(--font-color);
     border-radius:0.4rem;
     margin-right: 1.6rem;
  }
@@ -240,7 +323,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #FFFFFF;
+    color: var(--font-color);
     background-color:#36B972;
  }
  .icon{
@@ -263,7 +346,7 @@ body{
     line-height: 1.9rem;
     margin-left: 12rem;
     margin-right: 0.52rem;
-    color: #FFFFFF;
+    color: var(--font-color);
 }
 .Log-In{
     text-indent: .5rem;
@@ -283,12 +366,12 @@ body{
     align-items: center;
     justify-content: center;
     margin-bottom: 2.93rem;
-    color: #FFFFFF;
+    color: var(--font-color);
 }
 .or-line hr{
     width: 14.5rem;
     height: .21rem;
-    border-top: 1px solid #FFFFFF;
+    border-top: 1px solid var(--font-color);
     margin: 0;
     
 }
@@ -315,9 +398,9 @@ body{
     margin-left: 5rem;
     margin-bottom: 2.4rem;
     border-radius: .6rem;
-    border-color: #FFFFFF;
-    background-color: #303030;
-    border: .2rem solid #FFFFFF;
+    border-color: var(--font-color);
+    /* background-color: #303030; */
+    border: .2rem solid var(--social-color);
     background-color: rgba(0,0,0,0.5);
     cursor: pointer;
 
@@ -335,7 +418,7 @@ body{
     font-weight: 700;
     line-height: 24px;
     letter-spacing: 0em;
-    color: #FFFFFF;
+    color: var(--social-color);
     border-style: hidden;
     background-color: rgba(0,0,0,0.5);
 }

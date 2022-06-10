@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GAMEFINDER-Home</title>
     <link rel="stylesheet" href="stylehome.css">
-    <link rel="stylesheet" href="modal.css">
-    <script src="model.js" defer></script>
-    <script src="darklightmode.js" defer></script>
-    <link rel="shortcut icon" href="#">
    
 </head>
 <body>
@@ -35,14 +31,6 @@
             </div>
             <div class="container-subtitle">
                 <a>Based on player counts and realease date</a>
-            </div>
-            <div class="darkandlightmode"> 
-                <input type="checkbox" class="checkboxdlmode" id="chk" aria-label="toggle darl mode">
-                <label class="labelm" for="chk">
-                    <img class="darkm" src="img/ON.svg"> 
-                    <img class="lightm" src="img/OFF.svg">
-                    <div class="ball"></div>
-                </label>
             </div>
         </div>
         
@@ -96,14 +84,18 @@
     </div>
 
     <div class="div45">
-        <div id="modal-btn" class="button" onclick="openModal()">
+        <div class="filter-item Reviews">
             <div class="div1">
                 <div class="div4-image">
-                    <img src="img/Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
+                    <img src="Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
                 </div> 
                 <div class="card-body">
-                    <a class="card-title">Biomutant</a>
-                    <a class="Number">#1</a>
+                    <div>
+                        <a class="card-title">Biomutant</a>
+                    </div>
+                    <div>
+                        <a class="Number">#1</a>
+                    </div>
                 </div>
                 <div class="Description">
                      <div class="release">
@@ -129,10 +121,10 @@
             </div>
         </div>
 
-        <div id="modal-btn" class="button" onclick="openModal1()">
+        <div class="filter-item Reviews">
             <div class="div2">
                 <div class="div4-image">
-                    <img src="img/Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
+                    <img src="Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
                 </div> 
                 <div class="card-body">
                     <div>
@@ -165,11 +157,10 @@
                 </div>
             </div>
         </div>
-
-        <div id="modal-btn" class="button" onclick="openModal()">
+        <div class="filter-item Reviews">
             <div class="div3">
                 <div class="div4-image">
-                    <img src="img/Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
+                    <img src="Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
                 </div> 
                 <div class="card-body">
                     <div>
@@ -202,10 +193,10 @@
                 </div>
             </div>
         </div>
-        <div id="modal-btn" class="button" onclick="openModal()">
+        <div class="filter-item Reviews">
             <div class="div4">
                 <div class="div4-image">
-                    <img src="img/Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
+                    <img src="Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
                 </div> 
                 <div class="card-body">
                     <div>
@@ -238,10 +229,10 @@
                 </div>
             </div>
         </div>
-        <div id="modal-btn" class="button" onclick="openModal()">
+        <div class="filter-item Reviews">
             <div class="div5">
                 <div class="div4-image">
-                    <img src="img/Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
+                    <img src="Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
                 </div> 
                 <div class="card-body">
                     <div>
@@ -274,10 +265,10 @@
                 </div>
             </div>
         </div>
-        <div id="modal-btn" class="button" onclick="openModal()">
+        <div class="filter-item Releases">
             <div class="div6">
                 <div class="div4-image">
-                    <img src="img/Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
+                    <img src="Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
                 </div> 
                 <div class="card-body">
                     <div>
@@ -310,10 +301,10 @@
                 </div>
             </div>
         </div>
-        <div id="modal-btn" class="button" onclick="openModal()">
+        <div class="filter-item Releases">
             <div class="div7">
                 <div class="div4-image">
-                    <img src="img/Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
+                    <img src="Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
                 </div> 
                 <div class="card-body">
                     <div>
@@ -346,10 +337,10 @@
                 </div>
             </div>
         </div>
-        <div id="modal-btn" class="button" onclick="openModal()">
+        <div class="filter-item Releases">
             <div class="div8">
                 <div class="div4-image">
-                    <img src="img/Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
+                    <img src="Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
                 </div> 
                 <div class="card-body">
                     <div>
@@ -382,10 +373,10 @@
                 </div>
             </div>
         </div>
-        <div id="modal-btn" class="button" onclick="openModal()">
+        <div class="filter-item Releases">
             <div class="div9">
                 <div class="div4-image">
-                    <img src="img/Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
+                    <img src="Biomutant-screenshots-gallery-08-24-2017-1.svg" > 
                 </div> 
                 <div class="card-body">
                     <div>
@@ -419,288 +410,6 @@
             </div>
         </div>
     </div>
-
-
-
-    <!-- MODAL -->
-    <div id="my-modal" class="modal">
-        <div class="modal-content">
-    
-            <div class="grid1">
-                <div class="cross">
-                    <img src="/img/Vectorcruz.svg" class="close">
-                </div>
-                
-                <div class="logosmodal">
-                    <img src="img/Group 2.svg">
-                    <img src="img/Group 10.svg">
-                    <img src="img/Groupbig.svg">
-                </div>
-                <div class="titulomodal">
-                    <a>Biomutant</a>
-                </div>
-                <div class="rectanglesmodal">
-                    <div class="rectangle1">
-                        <a>May 31, 2021</a>
-                    </div>
-                    <div class="rectangle2">
-    
-                    </div>
-                    <div class="rectangle3">
-    
-                    </div>
-    
-                </div>
-            </div>
-            <div class="grid2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget rutrum nulla.
-                    Nullam rutrum est nec risus ullamcorper sagittis. Phasellus tempor quam non
-                    purus dictum, nec rhoncus nulla fringilla. Nulla semper nisl id augue rhoncus
-                    suscipit. Vivamus sit amet massa mi, Nunc gravida sem id tellus lobortis, ut
-                    egestas odio elementum.</p>
-            </div>
-            <div class="grid3">
-                <div class="buttonmodal1">
-                    <a>Add to wishlist</a>
-                    <img src="img/Heart.svg">
-                </div>
-            </div>
-            <div class="grid4">
-                <div class="buttonmodal2">
-                    <a>Purchase</a>
-                </div>
-            </div>
-            <div class="grid5">
-                <div class="desca">
-                    <div class="desc-titles">
-                        <a>Platforms</a>
-                    </div>
-                    <div class="desc">
-                        <a>Playstation 5, PC, Xbox One</a>
-                    </div>
-                </div>
-                <div class="desca">
-                    <div class="desc-titles">
-                        <a>Release date</a>
-                    </div>
-                    <div class="desc2">
-                        <a>May 31, 2021</a>
-                    </div>
-                </div>
-                <div class="desca">
-                    <div class="desc-titles">
-                        <a>Publisher</a>
-                    </div>
-                    <div class="desc">
-                        <a>THQ Nordic</a>
-                    </div>
-                </div>
-                <div class="desca">
-                    <div class="desc-titles">
-                        <a>Website</a>
-                    </div>
-                    <div class="desc">
-                        <a>https://biomutant.com</a>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="grid6">
-                <div class="desca">
-                    <div class="desc-titles">
-                        <a>Genre</a>
-                    </div>
-                    <div class="desc">
-                        <a>Action, RPG</a>
-                    </div>
-                </div>
-                <div class="desca">
-                    <div class="desc-titles">
-                        <a>Developer</a>
-                    </div>
-                    <div class="desc">
-                        <a>Experiment 101</a>
-                    </div>
-                </div>
-                <div class="desca">
-                    <div class="desc-titles">
-                        <a>Age rating</a>
-                    </div>
-                    <div class="desc2">
-                        <a>Not rated</a>
-                    </div>
-                </div>
-                <div class="actionsmodal">
-                    <img src="img/Chat Bubbles.svg">
-                    <img src="img/Thumbs Up.svg">
-                    <img src="img/Action.svg">
-                </div>
-            </div>
-    
-            <div class="grid7">
-                <div class="pic1">
-                    <div class="pic1a">
-                        <img src="/img/Screen Shot 2021-05-05 at 11.22.18.jpg">
-                        <div class="YouTubeicon">
-                            <img src="/img/YouTube.svg">
-                        </div>
-                    </div>
-    
-                </div>
-                <div class="pic2">
-                    <img src="/img/Screen Shot 2021-05-05 at 12.14.37.jpg">
-                </div>
-                <div class="pic3">
-                    <img src="/img/Screen Shot 2021-05-05 at 12.15.05.jpg">
-                </div>
-                <div class="pic4">
-                    <img src="/img/Screen Shot 2021-05-05 at 12.15.23.jpg">
-                </div>
-                <div class="pic5">
-                    <img src="/img/Screen Shot 2021-05-05 at 12.15.05.jpg">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="my-modal1" class="modal">
-        <div class="modal-content">
-    
-            <div class="grid1">
-                <div class="cross">
-                    <img src="/img/Vectorcruz.svg" class="close" onclick="closeModal1()">
-                </div>
-                
-                <div class="logosmodal">
-                    <img src="img/Group 2.svg">
-                    <img src="img/Group 10.svg">
-                    <img src="img/Groupbig.svg">
-                </div>
-                <div class="titulomodal">
-                    <a>Halo</a>
-                </div>
-                <div class="rectanglesmodal">
-                    <div class="rectangle1">
-                        <a>May 31, 2021</a>
-                    </div>
-                    <div class="rectangle2">
-    
-                    </div>
-                    <div class="rectangle3">
-    
-                    </div>
-    
-                </div>
-            </div>
-            <div class="grid2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eget rutrum nulla.
-                    Nullam rutrum est nec risus ullamcorper sagittis. Phasellus tempor quam non
-                    purus dictum, nec rhoncus nulla fringilla. Nulla semper nisl id augue rhoncus
-                    suscipit. Vivamus sit amet massa mi, Nunc gravida sem id tellus lobortis, ut
-                    egestas odio elementum.</p>
-            </div>
-            <div class="grid3">
-                <div class="buttonmodal1">
-                    <a>Add to wishlist</a>
-                    <img src="img/Heart.svg">
-                </div>
-            </div>
-            <div class="grid4">
-                <div class="buttonmodal2">
-                    <a>Purchase</a>
-                </div>
-            </div>
-            <div class="grid5">
-                <div class="desca">
-                    <div class="desc-titles">
-                        <a>Platforms</a>
-                    </div>
-                    <div class="desc">
-                        <a>Playstation 5, PC, Xbox One</a>
-                    </div>
-                </div>
-                <div class="desca">
-                    <div class="desc-titles">
-                        <a>Release date</a>
-                    </div>
-                    <div class="desc2">
-                        <a>May 31, 2021</a>
-                    </div>
-                </div>
-                <div class="desca">
-                    <div class="desc-titles">
-                        <a>Publisher</a>
-                    </div>
-                    <div class="desc">
-                        <a>THQ Nordic</a>
-                    </div>
-                </div>
-                <div class="desca">
-                    <div class="desc-titles">
-                        <a>Website</a>
-                    </div>
-                    <div class="desc">
-                        <a>https://biomutant.com</a>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="grid6">
-                <div class="desca">
-                    <div class="desc-titles">
-                        <a>Genre</a>
-                    </div>
-                    <div class="desc">
-                        <a>Action, RPG</a>
-                    </div>
-                </div>
-                <div class="desca">
-                    <div class="desc-titles">
-                        <a>Developer</a>
-                    </div>
-                    <div class="desc">
-                        <a>Experiment 101</a>
-                    </div>
-                </div>
-                <div class="desca">
-                    <div class="desc-titles">
-                        <a>Age rating</a>
-                    </div>
-                    <div class="desc2">
-                        <a>Not rated</a>
-                    </div>
-                </div>
-                <div class="actionsmodal">
-                    <img src="img/Chat Bubbles.svg">
-                    <img src="img/Thumbs Up.svg">
-                    <img src="img/Action.svg">
-                </div>
-            </div>
-    
-            <div class="grid7">
-                <div class="pic1">
-                    <div class="pic1a">
-                        <img src="/img/Screen Shot 2021-05-05 at 11.22.18.jpg">
-                        <div class="YouTubeicon">
-                            <img src="/img/YouTube.svg">
-                        </div>
-                    </div>
-    
-                </div>
-                <div class="pic2">
-                    <img src="/img/Screen Shot 2021-05-05 at 12.14.37.jpg">
-                </div>
-                <div class="pic3">
-                    <img src="/img/Screen Shot 2021-05-05 at 12.15.05.jpg">
-                </div>
-                <div class="pic4">
-                    <img src="/img/Screen Shot 2021-05-05 at 12.15.23.jpg">
-                </div>
-                <div class="pic5">
-                    <img src="/img/Screen Shot 2021-05-05 at 12.15.05.jpg">
-                </div>
-            </div>
-        </div>
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>

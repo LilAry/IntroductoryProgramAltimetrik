@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="stylelogin.css">
     <script src="validation.js" defer></script>
     <script src="login.js" defer></script>
+    <script src="darklightmode.js" defer></script>
+   
     <script src="carousel.js" defer></script>
     <link rel="shortcut icon" href="#">
 </head>
@@ -51,7 +53,14 @@
             <span class="dot" onclick="currentSlide(6)"></span>
         </div>
     </div>
-    
+    <div class="darkandlightmode"> 
+        <input type="checkbox" class="checkboxdlmode" id="chk" aria-label="toggle darl mode">
+        <label class="labelm" for="chk">
+            <img class="darkm" src="img/ON.svg"> 
+            <img class="lightm" src="img/OFF.svg">
+            <div class="ball"></div>
+        </label>
+    </div>
     <div class="registro">
         <h1 class="titulo">Welcome! Log in or register</h1>
         <h3 class="subtitulo">Log in to find the games you're looking for!</h3>
@@ -60,8 +69,9 @@
             <div>
                 <input class="login-form-items" id="email" type="email" placeholder="Email" required>
             </div>
-            <div>
+            <div class="password">
                 <input class="login-form-items" id="password" name="password" type="password" placeholder="Password">
+                <img class="imgpass" src="/img/Vector.svg" >
             </div>
             <div class="option">
 
@@ -97,6 +107,6 @@
         </div>
         
     </div>
-    
+    <script src="vercontrasenia.js"></script>   
 </body>
 </html>

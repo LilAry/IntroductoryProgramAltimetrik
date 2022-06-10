@@ -1,0 +1,294 @@
+@font-face {
+    font-family: Exo;
+    src: url(fonts/Exo-VariableFont_wght.ttf) format('truetype');
+}
+@font-face {
+    font-family: Opensans;
+    src: url(fonts/OpenSans-VariableFont_wdth\,wght.ttf) format('truetype');
+}
+*{
+    box-sizing:border-box;
+}
+.body{
+    margin: 0;
+}
+.html{
+    width: 100%;
+}
+
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.modal-content {
+    display: grid;
+    grid-template-columns: 260px 392px 424px;
+    grid-template-rows: 290px 137px 71px 295px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    position: absolute;
+    height: 793px;
+    width: 1076px;
+    left: 182px;
+    top: 111px;
+    border-radius: 24px;
+    background: linear-gradient(180deg, rgba(48, 48, 48, 0.0001) 0%, #303030 84.4%);
+    background-image: url(/img/9.jpg);
+    background-repeat: no-repeat;
+    background-color: #303030;
+    /* border-image: fill; */
+    
+    }
+
+    
+
+    .grid1 { grid-area: 1 / 1 / 2 / 4; }
+    .cross{
+        position: absolute;
+        right: 33.98px;
+        top:33.98px;
+        
+    }
+
+    .logosmodal{
+        position: absolute;
+        top:125px;
+        margin-left:32px;
+        margin-bottom: 16px;
+       
+    }
+
+    .logosmodal img{
+        margin-right: 24.2px;
+    }
+
+    .titulomodal{
+        height: 65px;
+        width: 589px;
+        top: 173px;
+        border-radius: nullpx;
+        position: absolute;
+
+    }
+
+    .titulomodal a{
+        font-family: Exo;
+        font-size: 48px;
+        font-weight: 800;
+        line-height: 64px;
+        letter-spacing: 0px;
+        text-align: left;
+        margin-left: 32px;
+        color: #FFFFFF;
+        margin-bottom: 9px;
+    }
+
+    .rectanglesmodal{
+        position: absolute;
+        height: 28px;
+        width: 350px;
+        left: 32px;
+        top: 243px;
+        display: flex; 
+    }
+
+    .rectanglesmodal a{
+        font-family: Exo;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0px;
+        text-align: center;
+        color: #515151;
+
+    }
+
+    .rectangle1{
+        height: 28px;
+        width: 125px;
+        border-radius: 62px;
+        background-color: #FFFFFF;
+        margin-right: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rectangle2{
+        height: 28px;
+        width: 124px;
+        border-radius: 62px;
+        background-color: #FFFFFF;
+        margin-right: 8px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rectangle3{
+        height: 28px;
+        width: 85px;
+        border-radius: 62px;
+        background-color: #FFFFFF;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+    .grid2 { grid-area: 2 / 1 / 3 / 3; 
+    margin-left: 32px;
+    }
+
+    .grid2 p{
+        font-family: Opensans;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: #FFFFFF;
+        margin-right: 24px;
+
+    }
+
+    .grid3 { grid-area: 3 / 1 / 4 / 2; 
+    }
+
+    .buttonmodal1{
+        height: 47px;
+        width: 228px;
+        border-radius: 6px;
+        background: #4CC986;
+        margin-left: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .buttonmodal1 a{
+        width: 152px;
+        font-family: Exo;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #FFFFFF;         
+        
+    }
+
+    .grid4 { grid-area: 3 / 2 / 4 / 3; }
+
+    .buttonmodal2{
+        height: 47px;
+        width: 229px;
+        border: 2px solid #36B972;
+        border-radius: 6px;
+        margin-left: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .buttonmodal2 a{
+        font-family: Exo;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 24px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: #36B972;              
+    }
+
+    .grid5 { grid-area: 4 / 1 / 5 / 2; 
+        margin-left: 32px;
+    }
+
+    .desc-and-titles{
+        position: relative;
+    }
+    .desc-titles{
+        font-family: Exo;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0px;
+        text-align: left;
+        color:#939393;
+        margin-bottom: 8px;
+    }
+
+    .desc{
+        font-family: Exo;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: #FFFFFF;
+        text-decoration: underline;
+
+    }
+
+    .desc2{
+        font-family: Exo;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: #FFFFFF;
+    }
+
+    .desca{
+        margin-bottom: 22px;
+    }
+    .grid6 { grid-area: 4 / 2 / 5 / 3; 
+        margin-left: 32px;
+    }
+
+    .actionsmodal{
+        margin-top: 51.33px;
+    }
+    .actionsmodal img{
+        margin-right: 16px;
+    }
+    .grid7 { grid-area: 2 / 3 / 5 / 4; 
+    display: grid;
+    grid-template-columns:184px 186px;
+    grid-template-rows: 217px repeat(2, 104px);
+    grid-column-gap: 12px;
+    grid-row-gap: 16px;
+}
+    .pic1 { grid-area: 1 / 1 / 2 / 3;
+       display: flex;
+       width: 100%;
+        
+    }
+    .pic1a img{
+        position: relative;
+        
+        
+    }
+    .pic1a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .YouTubeicon{
+        
+        position: absolute;
+        
+
+    }    
+    .pic2 { grid-area: 2 / 1 / 3 / 2; }
+    .pic3 { grid-area: 2 / 2 / 3 / 3; }
+    .pic4 { grid-area: 3 / 1 / 4 / 2; }
+    .pic5 { grid-area: 3 / 2 / 4 / 3; }
+    
