@@ -1,0 +1,22 @@
+{
+  "name": "require-if-exists",
+  "version": "1.0.0",
+  "description": "Require a given module if it exists or fail silently",
+  "homepage": "https://github.com/tronite/require-if-exists#readme",
+  "bugs": {
+    "url": "https://github.com/tronite/require-if-exists/issues"
+  },
+  "license": "MIT",
+  "author": "Richard Solomou <richard@richardsolomou.com>",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tronite/require-if-exists.git"
+  },
+  "scripts": {
+    "release": "np"
+  },
+  "devDependencies": {
+    "np": "^3.0.4"
+  }
+}

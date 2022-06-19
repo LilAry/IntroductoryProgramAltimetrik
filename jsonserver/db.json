@@ -1,8 +1,11 @@
 {
   "users": [
     {
-      "email": "ayrtonkevin01@hotmail.com",
-      "password": "$2a$10$nLy6qNrZU/XKPY4fgrvCgu.FRsgFV8vD257d2pSQCcZnrhCxdOfMC",
+      "email": "ariadna@mail.com",
+      "password": "$2a$10$JA4apacGDK5B0UFk0RU1HOf6wwbcM0.rCAhHYOlyI8qedssdXmKwa",
+      "firstname": "ariadna",
+      "lastname": "ferreira",
+      "age": 24,
       "id": 1
     }
   ]

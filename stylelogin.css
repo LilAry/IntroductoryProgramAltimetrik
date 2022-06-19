@@ -14,9 +14,6 @@ html{
     width: 100%;
 }
 body{
-    /* background: url(./img/BG.jpg);
-    background-size:cover;
-    background-repeat: no-repeat; */
     position: relative;
     margin: 0;
     width: 100%;
@@ -30,10 +27,13 @@ body{
     --clr-box-dark: rgba(0,0,0,0.5);
     --clr-social-light: #4CC986;
     --clr-social-dark: white;
+    --clr-socialbox-light: none;
+    --clr-socialbox-dark: rgba(0,0,0,0.5);
 
     --font-color: var(--clr-fonts-dark);
     --box-color: var(--clr-box-dark);
     --social-color: var(--clr-social-dark);
+    --socialbox-color: var(--clr-socialbox-dark);
 }
 .darkmode {
     --clr-fonts-light: #515151;
@@ -42,20 +42,37 @@ body{
     --clr-box-dark: rgba(0,0,0,0.5);
     --clr-social-light: #4CC986;
     --clr-social-dark: white;
+    --clr-socialbox-light: none;
+    --clr-socialbox-dark: rgba(0,0,0,0.5);
 
     --font-color: var(--clr-fonts-light);
     --box-color: var(--clr-box-light);
     --social-color: var(--clr-social-light);
+    --socialbox-color: var(--clr-socialbox-light);
 }
+
 .imagee{
     position: absolute;
-    z-index: 7;
+    
+    max-width:1440px;
+    max-height: 115px;
+    z-index: 8;
     left: 5.323rem;
     right: 4.42%;
     top: 4.427rem;
     bottom: 21.62%;
+
     
 }
+.gamefinder-icon{
+    fill: var(--font-color);
+}
+/* @mediA (max-width: 1440px) {
+    .imagee{
+        display: flex;
+        justify-content: center;
+}
+} */
 .container{
     z-index: 6;
     width: 100%;
@@ -70,57 +87,60 @@ body{
 
 .container .image img{
     display: block;
-    width: 100%;
+    max-width: 1440px;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position:center ;
+    overflow: hidden;
 }
+
 .checkboxdlmode {
     opacity: 0;
     position: absolute;
 }
-/* .checkbox:checked + .label{
-    background: green;
-} */
+
 .darkandlightmode label{
-    width: 44px;
-    height: 22px;
+    width: 4.4rem;
+    height: 2.2rem;
     background-color: #5F81FB;
     display: flex;
-    border-radius: 23px;
+    border-radius: 2.3rem;
     align-items: center;
     justify-content: center;
     position: absolute;
     z-index: 10;
-    right: 40px;
+    right: 4rem;
     top: 4.7rem;
     
     
 }
-input[type=checkbox]:checked + label{
+.darkandlightmode input[type=checkbox]:checked + label{
     background-color: #E1E1E4;
 }
 input[type=checkbox]:checked + label .ball{
-    transform: translateX(-22px);
+    transform: translateX(-2.2rem);
 }
 
 .darkm{
-    width: 10.25px;
-    height: 6px;
-    margin-right: 3px;
+    width: 1.025rem;
+    height: .6rem;
+    margin-right: .3rem;
 }
 .lightm{
-    width: 14.05px;
-    height: 6px;
-    margin-left: 2px;
+    width: 1.405rem;
+    height: .6rem;
+    margin-left: .2rem;
 }
 .ball{
-    width: 18px;
-    height: 18px;
+    width: 1.8rem;
+    height: 1.8rem;
     background-color: #FFFFFF;
     border-radius: 50%;
     position: absolute;
-    right: 2.5px;
+    right: .25rem;
     transition: transform 0.2s linear;
 }
 .container .button{
@@ -135,16 +155,16 @@ input[type=checkbox]:checked + label .ball{
 }
 
 .container .button a{
-    width: 43px;
-    height: 43px;
+    width: 4.3rem;
+    height: 4.3rem;
     text-align: center;
-    line-height: 40px;
+    line-height: 4rem;
     vertical-align: middle;
     align-items: center;
     cursor: pointer;
     color: white;
     background: var(--box-color);
-    font-size: 20px;
+    font-size: 2rem;
     user-select: none;
     opacity: 80%;
 }
@@ -158,6 +178,9 @@ input[type=checkbox]:checked + label .ball{
     justify-content: center;
     align-items: center;
     
+}
+.icon-color{
+    fill: var(--font-color);
 }
 
 .container .button .next{
@@ -174,24 +197,24 @@ input[type=checkbox]:checked + label .ball{
     justify-content: space-around;
     align-items: center;
     position: absolute;
-    bottom: 32px;
-    left: 45%;
+    bottom: 3.2rem;
+    left: calc(50% - 2.5rem);
     background: var(--box-color);
-    padding: 5px 10px;
-    width: 120px;
-    height: 27px;
-    border-radius: 18px;
+    padding: .5rem 1rem;
+    width: 12rem;
+    height: 2.7rem;
+    border-radius: 1.8rem;
 }
 
 .dot{
     cursor: pointer;
-    height: 7px;
-    width: 7px;
+    height: .7rem;
+    width: .7rem;
     border-radius: 50%;
     background: var(--font-color);
     opacity: 25%;
     display: inline-block;
-    margin: 0 2px;
+    margin: 0 .2rem;
 }
 .active, .dot:hover{
     opacity: 100%;
@@ -201,14 +224,19 @@ input[type=checkbox]:checked + label .ball{
     z-index: 8;
     width: 46.2rem;
     height: 70.2rem;
+    right:10rem;
     left: 87.9rem;
     top: 17.8rem;
-    /* background: var(--box-color); */
     background-blend-mode: overlay;
     border-radius: 1.2rem;
     background-color: var(--box-color);
     
 }
+/* @media (max-width:1440px){
+    .registro{
+        left: calc(50% - 23.5rem);
+        }
+} */
 .titulo{
     font-family: Exo;
     font-size: 2rem;
@@ -239,11 +267,10 @@ input[type=checkbox]:checked + label .ball{
 .password img{
     cursor: pointer;
     position:relative;
-    right: 31.15px;
-    bottom: 6px;
+    right: 3.115rem;
+    bottom: .6rem;
 }
 .login-form-items{
-    /* position: relative; */
     height: 4.7rem;
     width: 36.2rem;
     border-radius: 0.4rem;
@@ -323,7 +350,7 @@ input[type=checkbox]:checked + label .ball{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--font-color);
+    /* color: white; */
     background-color:#36B972;
  }
  .icon{
@@ -371,7 +398,7 @@ input[type=checkbox]:checked + label .ball{
 .or-line hr{
     width: 14.5rem;
     height: .21rem;
-    border-top: 1px solid var(--font-color);
+    border-top: .1rem solid var(--font-color);
     margin: 0;
     
 }
@@ -379,11 +406,11 @@ input[type=checkbox]:checked + label .ball{
     font-family: Open Sans;
     font-size: 14px;
     font-weight: 400;
-    line-height: 19px;
+    line-height: 1.9rem;
     letter-spacing: 0px;
     text-align: center;
-    padding-right: 26.47px;
-    padding-left: 26.47px;
+    padding-right: 2.647rem;
+    padding-left: 2.647rem;
 
 }
 
@@ -399,11 +426,13 @@ input[type=checkbox]:checked + label .ball{
     margin-bottom: 2.4rem;
     border-radius: .6rem;
     border-color: var(--font-color);
-    /* background-color: #303030; */
     border: .2rem solid var(--social-color);
-    background-color: rgba(0,0,0,0.5);
+    background-color: var(--socialbox-color);
     cursor: pointer;
 
+}
+.social-icons{
+    fill: var(--social-color);
 }
 .button-s{
     cursor: pointer;
@@ -414,13 +443,13 @@ input[type=checkbox]:checked + label .ball{
     bottom: 0;
     margin: auto;
     font-family: Exo;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 700;
-    line-height: 24px;
+    line-height: 2.4rem;
     letter-spacing: 0em;
     color: var(--social-color);
     border-style: hidden;
-    background-color: rgba(0,0,0,0.5);
+    background-color:var(--socialbox-color);
 }
 .icon{
     position: absolute;
