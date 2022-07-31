@@ -2,23 +2,19 @@
     font-family: Exo;
     src: url(fonts/Exo-VariableFont_wght.ttf) format('truetype');
 }
-@font-face {
-    font-family: Opensans;
-    src: url(fonts/OpenSans-VariableFont_wdth\,wght.ttf) format('truetype');
-}
+
 *{
   box-sizing:border-box;
 }
 html{
     font-size: 62.5%;
     width: 100%;
+    height: 100vh;
 }
 body{
     position: relative;
     margin: 0;
     width: 100%;
-    height: 100%;
-
 }
 :root{
     --clr-fonts-light: #515151;
@@ -51,56 +47,47 @@ body{
     --socialbox-color: var(--clr-socialbox-light);
 }
 
-.imagee{
+.imageLogo{
     position: absolute;
-    
-    max-width:1440px;
-    max-height: 115px;
-    z-index: 8;
+    z-index: 2;
     left: 5.323rem;
-    right: 4.42%;
-    top: 4.427rem;
-    bottom: 21.62%;
-
-    
+    top: 4.427rem;   
 }
+
 .gamefinder-icon{
     fill: var(--font-color);
 }
-/* @mediA (max-width: 1440px) {
-    .imagee{
-        display: flex;
-        justify-content: center;
+
+.container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width:100%;
+    
 }
-} */
-.container{
-    z-index: 6;
-    width: 100%;
+.backgroundImage{
     height: 100vh;
-    margin: auto;
-    position: relative;
+    width: 100vw;
 }
 
-.container .image{
-    display: none;
-}
-
-.container .image img{
+.backgroundImage img{
+    max-width: 100%;
+    height: 100vh;
     display: block;
-    max-width: 1440px;
-    height: 100%;
     object-fit: cover;
     object-position: center;
     background-attachment: fixed;
-    background-size: cover;
     background-position:center ;
-    overflow: hidden;
 }
+
 
 .checkboxdlmode {
     opacity: 0;
     position: absolute;
+    overflow: hidden;
 }
+
 
 .darkandlightmode label{
     width: 4.4rem;
@@ -110,7 +97,7 @@ body{
     border-radius: 2.3rem;
     align-items: center;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     z-index: 10;
     right: 4rem;
     top: 4.7rem;
@@ -144,7 +131,7 @@ input[type=checkbox]:checked + label .ball{
     transition: transform 0.2s linear;
 }
 .container .button{
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 0;
     width: 100%;
@@ -196,9 +183,9 @@ input[type=checkbox]:checked + label .ball{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: absolute;
+    position: fixed;
     bottom: 3.2rem;
-    left: calc(50% - 2.5rem);
+    right: calc(50% - 6rem);
     background: var(--box-color);
     padding: .5rem 1rem;
     width: 12rem;
@@ -220,23 +207,20 @@ input[type=checkbox]:checked + label .ball{
     opacity: 100%;
 }  
 .registro{
-    position: absolute;
+    position: fixed;
     z-index: 8;
     width: 46.2rem;
     height: 70.2rem;
     right:10rem;
-    left: 87.9rem;
     top: 17.8rem;
     background-blend-mode: overlay;
     border-radius: 1.2rem;
     background-color: var(--box-color);
     
 }
-/* @media (max-width:1440px){
-    .registro{
-        left: calc(50% - 23.5rem);
-        }
-} */
+
+
+
 .titulo{
     font-family: Exo;
     font-size: 2rem;
@@ -264,22 +248,33 @@ input[type=checkbox]:checked + label .ball{
     display: flex;
     align-items: center;
 }
+#password{
+    font: small-caption;
+    font-size: 16px;
+    letter-spacing: 0.125em;
+}
 .password img{
     cursor: pointer;
-    position:relative;
-    right: 3.115rem;
-    bottom: .6rem;
+    position:absolute;
+    right: 6rem;
+    bottom: 3rem;
+
 }
+.imgpassShow{
+    display: none;
+}
+
 .login-form-items{
     height: 4.7rem;
     width: 36.2rem;
     border-radius: 0.4rem;
     margin-left: 5rem;
     margin-bottom: 1.6rem;
-    font-family: 'Exo';
+    font: small-caption;
+    font-size: 16px;
+    letter-spacing: 0.125em;
     font-style: normal;
     font-weight: 400;
-    font-size: 1.5rem;
     padding-left: 1.6rem;
     border-style: none;
 }
@@ -350,7 +345,6 @@ input[type=checkbox]:checked + label .ball{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* color: white; */
     background-color:#36B972;
  }
  .icon{
@@ -359,7 +353,7 @@ input[type=checkbox]:checked + label .ball{
 .forgot-psw{
     color:#5FE19B;
     text-decoration:none;
-    font-family: Opensans;
+    font-family: Exo;
 }
 .reg-not{
     margin-bottom: 2.4rem;
@@ -403,7 +397,7 @@ input[type=checkbox]:checked + label .ball{
     
 }
 .or{
-    font-family: Open Sans;
+    font-family: Exo;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.9rem;
@@ -455,4 +449,286 @@ input[type=checkbox]:checked + label .ball{
     position: absolute;
     margin-left: 6.1rem;
 }
-/* NOSE PORQUE ESTA BAJA LA OPACIDAD DE MI ICONO :( */
+
+
+@media (max-width:768px){
+    .registro{
+        left: calc(50% - 23.1rem);
+        }
+    .imageLogo{
+        position: absolute;
+        z-index: 2;
+        top: 4.427rem;
+        left: calc(50% - 14.7rem);
+    }
+}
+@media (max-width:767px){
+    .container .button{
+        display: none;
+    }
+    .container .dots{
+        display: none;
+    }
+    .darkandlightmode{
+        display: none;
+    }
+}
+@media (max-width:460px){
+    .registro{
+        top:78px;
+    }
+    .imageLogo svg{
+        width:19.417rem ;
+        height: 2.497rem;
+    }
+    .imageLogo{
+        position: absolute;
+        z-index: 2;
+        top: 3.351rem;
+        left: calc(50% - 9.7rem);
+    }
+
+}
+
+@media (max-width:320px){
+
+    .registro{
+        position: fixed;
+        left: calc(50% - 160px);
+        z-index: 8;
+        width: 32rem;
+        height: 68.9rem;
+        top: 7.8rem;
+        background-blend-mode: overlay;
+        border-radius: 1.2rem;
+        background-color: var(--box-color);
+        overflow: scroll;
+        
+    }
+    
+    
+    
+    .titulo{
+        font-family: Exo;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2.7rem;
+        letter-spacing: 0px;
+        text-align: center;
+        margin-top: 22px;
+        color: var(--font-color);
+    
+    }
+    
+    .subtitulo{
+        width: 28.5rem;
+        height: 2.8rem;
+        display: flex;
+        font-family: Exo;
+        font-style: normal;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2.1rem;
+        letter-spacing: 0em;
+        text-align: center;
+        color: var(--font-color);
+        margin-left: 1.8rem;
+        margin-top: 1.6rem;
+        margin-bottom: 3.5rem;
+    
+    }
+    .password{
+        display: flex;
+        align-items: center;
+    }
+    .password img{
+        cursor: pointer;
+        position:absolute;
+        top:1.6rem;
+        right: 3rem;
+    }
+    .login-form-items{
+        height: 4.7rem;
+        width: 28.8rem;
+        border-radius: 0.4rem;
+        margin-left: 1.6rem;
+        font-family: 'Exo';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.5rem;
+        padding-left: 1.273rem;
+        border-style: none;
+    }
+    
+    .login-button{
+        height: 4.7rem;
+        width: 28.8rem;
+        text-align: center;
+        background: #4CC986;
+        border-radius: 0.6rem;
+        margin-left: 1.6rem;
+        margin-top: 2.4rem;
+        border-style: none;
+        font-family: Exo;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1.8rem;
+        align-items: center;
+        color: #FFFFFF;
+        margin-bottom: 3.2rem;
+    }
+    .option
+    {
+        display: flex;
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.9rem;
+        letter-spacing: 0px;
+        align-items: center;
+        margin-left: 1.8rem;
+    
+    }
+    .left-option{
+        display: flex;
+        align-items:center;    
+    }
+    .rigth-option{
+        text-align: right;
+    }
+    .left-option label{
+        font-family: Exo;
+        color: var(--font-color);
+        cursor: pointer;
+        margin-right:3.4rem;
+        display: flex;
+        
+    }
+    .left-option input[type='checkbox'] {
+        cursor:pointer;
+        opacity:0;
+        position:absolute;
+    }
+    .left-option label::before {
+        content:'';
+        width:1em;
+        height:1em;
+        border: 0.15rem solid var(--font-color);
+        border-radius:0.4rem;
+        margin-right: 1.6rem;
+     }
+    .left-option input[type='checkbox']:disabled + label,
+    .left-option input[type='checkbox']:disabled {
+        opacity: 0;
+        cursor: default;
+    }
+    .left-option input[type='checkbox']:checked + label::before {
+        content:'\002714';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color:#36B972;
+     }
+     .icon{
+         z-index: 1;
+     }
+    .forgot-psw{
+        color:#5FE19B;
+        text-decoration:none;
+        font-family: Exo;
+    }
+    .reg-not{
+        margin-bottom: 2.4rem;
+    }
+    
+    .spansito{
+        font-family: Exo;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+        margin-left: 4.9rem;
+        margin-right: 0.52rem;
+        color: var(--font-color);
+    }
+    .Log-In{
+        text-indent: .5rem;
+        left: 79.37%;
+        right: 14.72%;
+        font-family: Exo;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 1.9rem;
+        text-align: right;
+        color: #5FE19B;
+    
+    }
+    .or-line{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2.93rem;
+        color: var(--font-color);
+    }
+    .or-line hr{
+        width: 11.73rem;
+        height: .21rem;
+        border-top: .1rem solid var(--font-color);
+        margin: 0;
+        
+    }
+    .or{
+        font-family: Exo;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.9rem;
+        letter-spacing: 0px;
+        text-align: center;
+        padding-right: 2.647rem;
+        padding-left: 2.647rem;
+    
+    }
+    
+    .button-social{
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 4.7rem;
+        width: 28.4rem;
+        left: 0rem;
+        top: 0rem;
+        margin-left:16px;
+        margin-bottom: 2.4rem;
+        border-radius: .6rem;
+        border-color: var(--font-color);
+        border: .2rem solid var(--social-color);
+        background-color: var(--socialbox-color);
+        cursor: pointer;
+    
+    }
+    .social-icons{
+        fill: var(--social-color);
+    }
+    .button-s{
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        font-family: Exo;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 2.4rem;
+        letter-spacing: 0em;
+        color: var(--social-color);
+        border-style: hidden;
+        background-color:var(--socialbox-color);
+    }
+    .icon{
+        position: absolute;
+        margin-left: 4.8rem;
+    }
+
+}

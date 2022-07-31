@@ -16,12 +16,16 @@
     <script src="login.js" defer></script>
     <script src="darklightmode.js" defer></script>
     <script src="carousel.js" defer></script>
-
 </head>
 <body>
+    <script>  
+        if(localStorage.getItem("token")){
+            alert("Already logged in.");
+            location.href="home.html";}
+        </script>
     <!-- Header Logo -->
     <header>
-        <div class="imagee">
+        <div class="imageLogo">
             <a href="index.html">
                 <svg class="imgg" width="294" height="38" viewBox="0 0 294 38" fill="none" xmlns="http://www.w3.org/2000/svg" alt="GAMEFINDER-Logo">
                     <path class="gamefinder-icon" d="M9.84502 37.7297C6.37082 37.7297 3.89165 36.8283 2.40753 35.0254C0.957131 33.1892 0.231934 30.318 0.231934 26.4118C0.231934 25.1765 0.299394 23.8744 0.434314 22.5056C0.602965 21.1367 0.805346 19.7011 1.04146 18.1987C1.61487 14.5596 2.49185 11.4046 3.67241 8.7337C4.88669 6.06279 6.5226 3.99284 8.58014 2.52384C10.6377 1.02146 13.2518 0.270264 16.4224 0.270264C19.0871 0.270264 21.347 0.437195 23.2021 0.771058C25.0573 1.07154 26.7101 1.42209 28.1605 1.82273L27.8569 4.02622C26.4402 3.72575 24.7706 3.45866 22.848 3.22495C20.9254 2.99125 18.8172 2.8744 16.5236 2.8744C13.8926 2.8744 11.7508 3.50874 10.098 4.77742C8.44522 6.0461 7.12974 7.86565 6.15157 10.2361C5.20713 12.6065 4.46506 15.5278 3.92538 19C3.45316 22.0048 3.21705 24.5254 3.21705 26.562C3.21705 29.5 3.79046 31.6534 4.93729 33.0223C6.11784 34.3911 8.04046 35.0755 10.7051 35.0755C11.5821 35.0755 12.5266 34.992 13.5385 34.8251C14.5841 34.6582 15.6129 34.4579 16.6248 34.2242C17.6704 33.9905 18.6149 33.7567 19.4581 33.523C20.3014 33.256 20.9591 33.0223 21.4313 32.8219L23.3539 20.7528H13.6903L13.9938 18.5493C14.9045 18.4157 16.0514 18.3323 17.4343 18.2989C18.851 18.2321 20.5712 18.1987 22.595 18.1987C22.9998 18.1987 23.4383 18.2154 23.9105 18.2488C24.3827 18.2488 24.8381 18.2655 25.2766 18.2989C25.7488 18.2989 26.1873 18.3156 26.592 18.349L23.5563 37.4292H21.4313L21.3301 34.8251C20.8916 35.0254 20.2339 35.2925 19.3569 35.6264C18.5137 35.9602 17.5355 36.2941 16.4224 36.628C15.343 36.9285 14.2299 37.1955 13.0831 37.4292C11.9363 37.6296 10.8569 37.7297 9.84502 37.7297Z" fill="white"/>
@@ -41,25 +45,14 @@
     <!-- Carrousel Slider -->
     <main>
         <div class="container">
-            <div class="image">
-                <img src="./img/BG.jpg" alt="Background image #1">
+            <div class="backgroundImage">
+                <img class="image" src="./img/BG.jpg" alt="Background image #1">
+                <img class="image" src="./img/unsplash_jCorhBYp_C4.jpg" alt="Background image #2">
+                <img class="image" src="./img/BG.jpg" alt="Background image #3">
+                <img class="image" src="./img/unsplash_jCorhBYp_C4.jpg" alt="Background image #4">
+                <img class="image" src="./img/BG.jpg" alt="Background image #5">
+                <img class="image" src="./img/unsplash_jCorhBYp_C4.jpg" alt="Background image #6">
             </div>
-            <div class="image">
-                <img src="./img/unsplash_jCorhBYp_C4.jpg" alt="Background image #2">
-            </div>
-            <div class="image">
-                <img src="./img/BG.jpg" alt="">
-            </div>
-            <div class="image">
-                <img src="./img/unsplash_jCorhBYp_C4.jpg" alt="Background image #3">
-            </div>
-            <div class="image">
-                <img src="./img/BG.jpg" alt="Background image #4">
-            </div>
-            <div class="image">
-                <img src="./img/unsplash_jCorhBYp_C4.jpg" alt="Background image #5">
-            </div>
-
             <div class="button">
                 <a onclick="nextimg(-1)" class="prev">
                     <svg class="prev-button" width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg" alt="Previus Slide Button">
@@ -85,12 +78,13 @@
         <!-- Dark-Light-Mode  -->
         <div class="darkandlightmode"> 
             <input type="checkbox" class="checkboxdlmode" id="chk" aria-label="toggle darl mode">
-            <label class="labelm" for="chk">
+            <label class="labelm" for="chk" id="labelBL">
                 <img class="darkm" src="img/ON.svg" alt="ON-DarkMode"> 
                 <img class="lightm" src="img/OFF.svg" alt="OFF-DarkMode">
-                <div class="ball"></div>
+                <div class="ball" id="ball"></div>
             </label>
         </div>
+      
         <!-- Register Form -->
         <div class="registro">
             <h1 class="titulo">Welcome! Log in or register</h1>
@@ -101,11 +95,11 @@
                     <input class="login-form-items" id="email" type="email" placeholder="Email" required>
                 </div>
                 <div class="password">
-                    <input class="login-form-items" id="password" name="password" type="password" placeholder="Password">
-                    <img class="imgpass" src="/img/Vector.svg" alt="Show Password">
+                    <input class="login-form-items" id="password" name="password" type="password" placeholder="Password" >
+                    <img class="imgpassDontshow" src="/img/Vector.svg" alt="Show Password" >
+                    <img class="imgpassShow" src="./img/showPassword.svg" alt="Show Password">
                 </div>
                 <div class="option">
-
                     <div class="left-option">
                         <input type="checkbox" id="remember">
                         <label for="rememberme">Remember me</label>
@@ -148,6 +142,6 @@
         </div>
     </main>
     <!-- scripts -->
-    <script src="vercontrasenia.js"></script>   
+    <script src="vercontrasenia.js"></script>
 </body>
 </html>

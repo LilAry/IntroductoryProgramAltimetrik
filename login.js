@@ -2,12 +2,12 @@ const formulario = document.getElementById("login-button");
 formulario.addEventListener("click",()=>{
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    console.log(email,password);
     var url = 'http://localhost:5000/login';
     var data = {
         email: email,
         password: password
     };
+    let statusCode =null;
 
     fetch(url, {
     method: 'POST', // or 'PUT'
@@ -15,9 +15,22 @@ formulario.addEventListener("click",()=>{
     headers:{
         'Content-Type': 'application/json'
     }
-    }).then(res => res.json())
-    .catch(error => alert('usuario o contrasenia incorrecta'))
-    .then(response => location.href="home.html");
+    }).then(res => {
+        statusCode=res.status;
+        return res.json();
+    })
+    .then(response =>{ 
+        if(statusCode==200){
+            localStorage.setItem("user",response.user.firstname);
+            localStorage.setItem("token",response.accessToken);
+            location.href="home.html";
+        }
+        else{
+            alert("User not found or password incorrect!");
+        }
+        })
+    .catch(error => alert("Internal Server Error"))
+    
 });
 
 

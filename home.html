@@ -11,119 +11,189 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="stylehome.css">
     <link rel="stylesheet" href="modal.css">
+     
     <!-- Scripts -->
-    
     <script src="darklightmode.js" defer></script>
+    <script src="logOut.js" defer></script>
     <link rel="shortcut icon" href="#">
    
 </head>
-<body>
 
-    <div class="parent">
-        <header>
-            <div class="logo-nav-container"> 
-                <a href="index.html" class="logo">
-                    <img class="navimg"  src="./img/GAMEFINDER.png" alt="GAMEFINDER-Logo" >
-                </a>
-                <div class="search-container">
-                    <div id="search-wrapper">
-                        <input class="searchbox" type="text" placeholder="Search Games..." data-search>
+<body>
+<script>  
+if(!localStorage.getItem("token")){
+    alert("Log in first to access home.")
+    location.href="login.html";}
+</script>
+    <div class="container-overlay">
+        <div class="parent">
+            <!-- Header -->
+            <header>
+                <div class="logo-nav-container"> 
+                    <!-- Hamburguer Menu Icon-->
+                    <a href="#" class="toggle-button">
+                        <svg class="navbarButton" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.66667 0.833374C1.35725 0.833374 1.0605 0.956291 0.841709 1.17508C0.622916 1.39388 0.5 1.69062 0.5 2.00004C0.5 2.30946 0.622916 2.60621 0.841709 2.825C1.0605 3.04379 1.35725 3.16671 1.66667 3.16671H20.3333C20.6428 3.16671 20.9395 3.04379 21.1583 2.825C21.3771 2.60621 21.5 2.30946 21.5 2.00004C21.5 1.69062 21.3771 1.39388 21.1583 1.17508C20.9395 0.956291 20.6428 0.833374 20.3333 0.833374H1.66667ZM0.5 9.00004C0.5 8.69062 0.622916 8.39388 0.841709 8.17508C1.0605 7.95629 1.35725 7.83337 1.66667 7.83337H20.3333C20.6428 7.83337 20.9395 7.95629 21.1583 8.17508C21.3771 8.39388 21.5 8.69062 21.5 9.00004C21.5 9.30946 21.3771 9.60621 21.1583 9.825C20.9395 10.0438 20.6428 10.1667 20.3333 10.1667H1.66667C1.35725 10.1667 1.0605 10.0438 0.841709 9.825C0.622916 9.60621 0.5 9.30946 0.5 9.00004ZM0.5 16C0.5 15.6906 0.622916 15.3939 0.841709 15.1751C1.0605 14.9563 1.35725 14.8334 1.66667 14.8334H20.3333C20.6428 14.8334 20.9395 14.9563 21.1583 15.1751C21.3771 15.3939 21.5 15.6906 21.5 16C21.5 16.3095 21.3771 16.6062 21.1583 16.825C20.9395 17.0438 20.6428 17.1667 20.3333 17.1667H1.66667C1.35725 17.1667 1.0605 17.0438 0.841709 16.825C0.622916 16.6062 0.5 16.3095 0.5 16Z" fill="white"/>
+                        </svg>
+                    </a>
+                    <!-- Search Land -->
+                    <div class="serchlupa" onclick="OpenSearchbarMobile()">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7 1.99999C5.67392 1.99999 4.40215 2.52677 3.46447 3.46446C2.52678 4.40214 2 5.67391 2 6.99999C2 8.32607 2.52678 9.59784 3.46447 10.5355C4.40215 11.4732 5.67392 12 7 12C8.32608 12 9.59785 11.4732 10.5355 10.5355C11.4732 9.59784 12 8.32607 12 6.99999C12 5.67391 11.4732 4.40214 10.5355 3.46446C9.59785 2.52677 8.32608 1.99999 7 1.99999ZM2.20582e-07 6.99999C2.1098e-06 5.89125 0.263375 4.79837 0.768432 3.81134C1.27349 2.82431 2.00578 1.97138 2.90501 1.32276C3.80423 0.674152 4.84467 0.24842 5.94064 0.080626C7.03661 -0.0871681 8.15676 0.00777569 9.20885 0.357639C10.2609 0.707502 11.2149 1.30228 11.9921 2.09298C12.7693 2.88369 13.3476 3.84771 13.6794 4.90567C14.0111 5.96362 14.0868 7.08524 13.9001 8.17816C13.7135 9.27108 13.27 10.304 12.606 11.192L17.707 16.292C17.8946 16.4795 18.0001 16.7339 18.0002 16.9991C18.0003 17.2644 17.895 17.5188 17.7075 17.7065C17.52 17.8941 17.2656 17.9996 17.0004 17.9997C16.7351 17.9998 16.4806 17.8945 16.293 17.707L11.193 12.607C10.1525 13.3853 8.91592 13.8587 7.62167 13.9741C6.32741 14.0895 5.02658 13.8424 3.86481 13.2604C2.70304 12.6784 1.72618 11.7846 1.0436 10.6789C0.361026 9.57321 -0.000325925 8.29938 2.20582e-07 6.99999Z" fill="white"/>
+                        </svg>
                     </div>
-                        <template data-user-template> 
-                            <div class="search-cards"  id="cards-container" data-user-cards-container>
-                                <div class="search-card1" id="searchcards-container">
-                                    <div class="card-name" id="data-header" data-header></div>
-                                </div>
+                    <!-- Hamburguer Menu -->
+                    <div class="navbar-links">
+                        <div class="crossNB">
+                            <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.585573 1.58644C0.960629 1.21148 1.46924 1.00083 1.99957 1.00083C2.5299 1.00083 3.03852 1.21148 3.41357 1.58644L13.9996 12.1729L24.5856 1.58644C24.7701 1.39541 24.9908 1.24303 25.2348 1.13821C25.4788 1.03339 25.7412 0.978213 26.0068 0.975906C26.2723 0.973598 26.5357 1.0242 26.7815 1.12477C27.0273 1.22534 27.2506 1.37385 27.4384 1.56164C27.6261 1.74944 27.7747 1.97275 27.8752 2.21856C27.9758 2.46436 28.0264 2.72774 28.0241 2.99331C28.0218 3.25888 27.9666 3.52133 27.8618 3.76535C27.757 4.00937 27.6046 4.23007 27.4136 4.41457L16.8276 15.0011L27.4136 25.5876C27.7779 25.9648 27.9795 26.47 27.9749 26.9945C27.9704 27.5189 27.76 28.0205 27.3892 28.3914C27.0184 28.7622 26.5168 28.9726 25.9924 28.9771C25.468 28.9817 24.9628 28.7801 24.5856 28.4157L13.9996 17.8292L3.41357 28.4157C3.03637 28.7801 2.53116 28.9817 2.00677 28.9771C1.48238 28.9726 0.980752 28.7622 0.609936 28.3914C0.23912 28.0205 0.0287811 27.5189 0.0242243 26.9945C0.0196674 26.47 0.221257 25.9648 0.585573 25.5876L11.1716 15.0011L0.585573 4.41457C0.210631 4.0395 0 3.53086 0 3.0005C0 2.47015 0.210631 1.96151 0.585573 1.58644Z" fill="white"/>
+                            </svg>
+                        </div>
+                        <div class="LogoutAvatarNB">
+                            <a href="index_img.html" alt="My Avatar"></a>
+                            <a class="usernameNB">NAME</a>
+                            <a class="attnameNB">surname</a>
+                            <a>
+                                <img src="./img/Custom.svg" alt="">
+                            </a>
+                        </div>
+                        <ul>
+                            <li><a class="home" href="#">Home</a></li>
+                            <li><a href="#">Reviews</a></li>
+                            <li><a href="#">New Realeases</a></li>
+                            <li><a href="#">Popular</a></li>
+                        </ul>
+                        <div class="DLmodeNavbar">
+                            <div class="darkandlightmodeNB"> 
+                                <input type="checkbox" class="checkboxdlmodeNB" id="chk2" aria-label="toggle darl mode">
+                                <a>Dark Mode</a>
+                                <label class="labelm" for="chk" id="labelBL">
+                                    <img class="darkmNB" src="img/ON.svg" alt="ON-DarkMode"> 
+                                    <img class="lightmNB" src="img/OFF.svg" alt="OFF-DarkMode">
+                                    <div class="ballNB" id="ball"></div>
+                                </label>
                             </div>
-                        </template>
-                </div>
-                <div class="LogoutAvatar">
-                    <a href="index_img.html" alt="My Avatar">
-                        <span >Log out</span>
+                        </div>
+                        <span class="logoutNB" id="logOutt">Log out</span>
+                    </div>
+                    <!-- GAMEFINDER Logo-->
+                    <a href="index.html" class="logo">
+                        <img class="navimg"  src="./img/GAMEFINDER.png" alt="GAMEFINDER-Logo" >
                     </a>
-                    <a>
-                        <img src="./img/Custom.svg" alt="">
-                    </a>
-                </div>    
-            </div>
+                    <!-- Search Bar -->
+                    <div class="search-container">
+                        <div id="search-wrapper" class="search-wrapper">
+                            <input class="searchbox" type="text" placeholder="Search Games..." data-search>
+                            <div>
+                                <svg onclick="closeSearchCards()" class="crossSearch" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 10.9995C2 9.81763 2.23279 8.64736 2.68508 7.55548C3.13738 6.46361 3.80031 5.4715 4.63604 4.63581C5.47177 3.80013 6.46392 3.13722 7.55585 2.68495C8.64778 2.23268 9.8181 1.9999 11 1.9999C12.1819 1.9999 13.3522 2.23268 14.4442 2.68495C15.5361 3.13722 16.5282 3.80013 17.364 4.63581C18.1997 5.4715 18.8626 6.46361 19.3149 7.55548C19.7672 8.64736 20 9.81763 20 10.9995C20 13.3863 19.0518 15.6754 17.364 17.3631C15.6761 19.0509 13.3869 19.999 11 19.999C8.61305 19.999 6.32387 19.0509 4.63604 17.3631C2.94821 15.6754 2 13.3863 2 10.9995ZM11 0C4.925 0 0 4.92476 0 10.9995C0 17.0742 4.925 21.9989 11 21.9989C17.075 21.9989 22 17.0742 22 10.9995C22 4.92476 17.075 0 11 0ZM8.172 6.75667C7.98436 6.56904 7.72986 6.46363 7.4645 6.46363C7.19914 6.46363 6.94464 6.56904 6.757 6.75667C6.56936 6.9443 6.46394 7.19879 6.46394 7.46414C6.46394 7.59553 6.48982 7.72563 6.54011 7.84702C6.59039 7.9684 6.66409 8.0787 6.757 8.1716L9.586 10.9995L6.757 13.8273C6.56936 14.015 6.46394 14.2694 6.46394 14.5348C6.46394 14.8001 6.56936 15.0546 6.757 15.2423C6.94464 15.4299 7.19914 15.5353 7.4645 15.5353C7.72986 15.5353 7.98436 15.4299 8.172 15.2423L11 12.4134L13.829 15.2423C13.9219 15.3351 14.0322 15.4087 14.1536 15.459C14.2749 15.5092 14.405 15.535 14.5364 15.535C14.6677 15.5349 14.7978 15.509 14.9191 15.4587C15.0404 15.4084 15.1507 15.3347 15.2435 15.2418C15.3363 15.1489 15.41 15.0386 15.4602 14.9172C15.5104 14.7959 15.5363 14.6658 15.5362 14.5344C15.5362 14.4031 15.5102 14.2731 15.4599 14.1517C15.4096 14.0304 15.3359 13.9202 15.243 13.8273L12.414 10.9995L15.243 8.1716C15.4306 7.98411 15.5361 7.72975 15.5362 7.46449C15.5363 7.19923 15.431 6.9448 15.2435 6.75717C15.056 6.56954 14.8016 6.46408 14.5364 6.46398C14.2711 6.46389 14.0166 6.56917 13.829 6.75667L11 9.58554L8.172 6.75667Z" fill="#D1D1DD"/>
+                                </svg>
+                            </div>
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                        </div>
+                        <div class="search-cards"  id="cards-container" data-user-cards-container>
+                            <div class="search-card1" id="searchcards-container">
+                                <div class="card-name" id="data-header" data-header></div>
+                            </div>
+                        </div>
             
-        </header>
-        <div class="container-titule"> 
-            <div class="container-a">
-                <a>New and Trending</a>
-            </div>
-            <div class="container-subtitle">
-                <a>Based on player counts and realease date</a>
-            </div>
-            <div class="darkandlightmode"> 
-                <input type="checkbox" class="checkboxdlmode" id="chk" aria-label="toggle darl mode">
-                <a>Dark Mode</a>
-                <label class="labelm" for="chk">
-                    <img class="darkm" src="img/ON.svg" alt="ON-DarkMode"> 
-                    <img class="lightm" src="img/OFF.svg" alt="OFF-DarkMode">
-                    <div class="ball"></div>
-                </label>
-            </div>
-        </div>
-        
-        <div class="div34"> 
-            <div class="filter-options" id="buttons">
-                <div>
-                    <button type = "button" class = "filter-btn" id = "all" onclick="filterObjects('all')">Home</button>
+                    </div>
+                    <!-- LogOut Avatar -->
+                    <div class="LogoutAvatar">
+                        <span class="logOutt">Log out</span>
+                        <a href="index_img.html" alt="My Avatar"></a>
+                        <a>
+                            <img src="./img/Custom.svg" alt="">
+                        </a>
+                        
+                    </div>    
+                </div>  
+            </header>
+            
+                <div class="container-titule"> 
+                    <!-- Titule -->
+                    <div class="container-a">
+                        <a>New and Trending</a>
+                    </div>
+                    <!-- Subtitule -->
+                    <div class="container-subtitle">
+                        <a>Based on player counts and realease date</a>
+                    </div>
+                    <!-- DarkLight Mode Controls -->
+                    <div class="darkandlightmode"> 
+                        <input type="checkbox" class="checkboxdlmode" id="chk" aria-label="toggle darl mode">
+                        <a>Dark Mode</a>
+                        <label class="labelm" for="chk" id="labelBL">
+                            <img class="darkm" src="img/ON.svg" alt="ON-DarkMode"> 
+                            <img class="lightm" src="img/OFF.svg" alt="OFF-DarkMode">
+                            <div class="ball" id="ball"></div>
+                        </label>
+                    </div>
+                
+                    <!-- Change Grid Display  -->
+                    <div class="grid-buttons">
+                        <a onclick="" class="three-columns" id="three-col">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect id="grid-icons" class="grid-icons" width="40" height="40" rx="10" fill="#515151"/>
+                                <path id="grid-icons-inside" class="grid-icons-inside" fill-rule="evenodd" clip-rule="evenodd" d="M27.5432 8.7998H13.2575C11.6796 8.7998 10.4004 10.079 10.4004 11.6569V15.9427C10.4004 17.5206 11.6796 18.7998 13.2575 18.7998H27.5432C29.1212 18.7998 30.4004 17.5206 30.4004 15.9427V11.6569C30.4004 10.079 29.1212 8.7998 27.5432 8.7998ZM11.829 11.657C11.829 10.868 12.4686 10.2284 13.2576 10.2284H27.5433C28.3323 10.2284 28.9719 10.868 28.9719 11.657V15.9427C28.9719 16.7317 28.3323 17.3713 27.5433 17.3713H13.2576C12.4686 17.3713 11.829 16.7317 11.829 15.9427V11.657ZM13.2575 21.6569H27.5432C29.1212 21.6569 30.4004 22.9361 30.4004 24.5141V28.7998C30.4004 30.3778 29.1212 31.6569 27.5432 31.6569H13.2575C11.6796 31.6569 10.4004 30.3778 10.4004 28.7998V24.5141C10.4004 22.9361 11.6796 21.6569 13.2575 21.6569ZM11.829 24.514C11.829 23.725 12.4686 23.0854 13.2576 23.0854H27.5433C28.3323 23.0854 28.9719 23.725 28.9719 24.514V28.7997C28.9719 29.5887 28.3323 30.2283 27.5433 30.2283H13.2576C12.4686 30.2283 11.829 29.5887 11.829 28.7997V24.514Z" fill="#FFFDF5"/>
+                                </svg>
+                        </a>
+                        <a onclick="" class="one-column" id="one-col">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect id="grid-icons2" class="grid-icons2" width="40" height="40" rx="10" fill="#303030"/>
+                                <path  id="grid-icons-inside2" class="grid-icons-inside2" fill-rule="evenodd" clip-rule="evenodd" d="M10.4004 11.8288C10.4004 11.4343 10.7202 11.1145 11.1147 11.1145H29.6861C30.0806 11.1145 30.4004 11.4343 30.4004 11.8288C30.4004 12.2233 30.0806 12.5431 29.6861 12.5431H11.1147C10.7202 12.5431 10.4004 12.2233 10.4004 11.8288ZM27.5432 15.4002H13.2575C11.6796 15.4002 10.4004 16.6794 10.4004 18.2573V22.543C10.4004 24.121 11.6796 25.4002 13.2575 25.4002H27.5432C29.1212 25.4002 30.4004 24.121 30.4004 22.543V18.2573C30.4004 16.6794 29.1212 15.4002 27.5432 15.4002ZM11.8291 18.2575C11.8291 17.4685 12.4687 16.8289 13.2577 16.8289H27.5434C28.3324 16.8289 28.972 17.4685 28.972 18.2575V22.5432C28.972 23.3322 28.3324 23.9718 27.5434 23.9718H13.2577C12.4687 23.9718 11.8291 23.3322 11.8291 22.5432V18.2575ZM11.1147 28.2574C10.7202 28.2574 10.4004 28.5772 10.4004 28.9717C10.4004 29.3662 10.7202 29.686 11.1147 29.686H29.6861C30.0806 29.686 30.4004 29.3662 30.4004 28.9717C30.4004 28.5772 30.0806 28.2574 29.6861 28.2574H11.1147Z" fill="
+                                #515151"/>
+                            </svg>   
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <button type = "button" class = "filter-btn" id = "Reviews" onclick="filterObjects('Reviews')">Reviews</button>
+             
+             <div class="div34"> 
+                    <div class="filter-options" id="buttons">
+                        <div><button type = "button" class = "filter-btn" id = "all" onclick="getGamesHome()">Home</button></div>
+                        <div><button type = "button" class = "filter-btn" id = "Reviews">Reviews</button></div>
+                        <div><button type = "button" class = "filter-btn" id = "Releases" >New Releases</button></div>
+                    </div>
+                    <div class="filter-options2">       
+                            <a>
+                                <img src="img/Star.svg" alt=""> 
+                            </a>
+                            <a class="textito">This week</a>   
+                    </div>
+                    <div class="filter-options2">       
+                        <a><img src="img/Calendar.svg" alt=""></a>
+                        <a class="textito">This month</a>   
+                    </div>
+                    <div class="filter-options2">       
+                        <a><img src="img/Clock.svg" alt=""></a>
+                        <a class="textito">Coming soon</a>   
+                    </div>
+                    <div class="filter-options3">
+                        <div><a>Popular</a></div>
+                    </div>
+                    <div class="filter-options2">       
+                        <a><img src="img/Search.svg" alt=""></a>
+                        <a class="textito"  id="lastSearches">Last searches</a>   
+                    </div>
+                    <div class="filter-options2">       
+                        <a><img src="img/Thumbs Up.svg" alt=""></a>
+                        <a class="textito">Best of the year</a>   
+                    </div>
                 </div>
-                <div>
-                    <button type = "button" class = "filter-btn" id = "Releases" onclick="filterObjects('Releases')">New Releases</button>
-                </div>
-            </div>
-            <div class="filter-options2">       
-                    <a>
-                        <img src="img/Star.svg" alt=""> 
-                    </a>
-                    <a class="textito">This week</a>   
-            </div>
-            <div class="filter-options2">       
-                <a>
-                    <img src="img/Calendar.svg" alt=""> 
-                </a>
-                <a class="textito">This month</a>   
-        </div>
-        <div class="filter-options2">       
-            <a>
-                <img src="img/Clock.svg" alt=""> 
-            </a>
-            <a class="textito">Coming soon</a>   
-        </div>
-        <div class="filter-options3">
-            <div>
-                <a>Popular</a>
-            </div>
-        </div>
-        <div class="filter-options2">       
-            <a>
-                <img src="img/Search.svg" alt=""> 
-            </a>
-            <a class="textito">Last searches</a>   
-        </div>
-        <div class="filter-options2">       
-            <a>
-                <img src="img/Thumbs Up.svg" alt=""> 
-            </a>
-            <a class="textito">Best of the year</a>   
+            
+            <div class="div45" id="container-div"></div>
+            <div id="my-modal1" class="modal"></div>
         </div>
     </div>
-
-    <div class="div45" id="container-div" ></div>
-
-    <div id="my-modal1" class="modal"></div>
-
     <!-- Scripts -->
     <script src="main.js" defer></script>
     <script src="searchbar.js" defer></script>
     <script src="model.js" defer></script>
-       
-</body>
+    <script src="changecolums.js" defer></script>
+    <script src="like.js" defer></script>
+    <script src="navbarTabMov.js" defer></script>      
 
+</body>
 </html>
