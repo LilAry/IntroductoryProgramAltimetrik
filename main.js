@@ -30,7 +30,7 @@ function manageErrors(response) {
 const detailGames=[];
 const detailGames2=[];
 let closeBtn = null;
-const  getGames = async () => {
+const  getGames = () => {
     fetch(`https://api.rawg.io/api/games?key=${key}&page=${n}`)
         .then(manageErrors)
         .then(response => response.json())
@@ -40,6 +40,7 @@ const  getGames = async () => {
                 detailGames.push(res);
                 const id = res.id;
                 fetch(`https://api.rawg.io/api/games/${id}?key=${key}`)
+                    .then(manageErrors)
                     .then(response => response.json())
                     .then(game => {   
                         detailGames2.push(game);
@@ -47,10 +48,13 @@ const  getGames = async () => {
                         gamesListPrincipal.append(divGame);
                         if (index==result.results.length-1){
                             const gamesinDisplay = document.querySelectorAll('.parent .div1');
-                            let lastGame = gamesinDisplay[gamesinDisplay.length-1];
+                            let lastGame = gamesinDisplay[gamesinDisplay.length-3];
                             observer.observe(lastGame);
                         }
-                    });        
+                    }).catch(function(error) { 
+                        console.log('Error Code   : ' + error.status );
+                        console.log('Error Reason : ' + error.statusText)
+                    })        
             });
         }).catch(function(error) { 
             console.log('Error Code   : ' + error.status );
@@ -58,7 +62,7 @@ const  getGames = async () => {
         });
 };
 
-//arrow function with one parameter
+
 const mostrarGeneros = genres => {
     let generstoShow = [];
     genres.forEach((item) => {generstoShow.push(item.name)});
@@ -193,9 +197,7 @@ const setGameHTML = (game) => {
 
 
     
-const initGames = async (gamename) => {
-    const gamesListPrincipal = document.querySelector('#container-div');
-    getGames(gamename).then((results)=> {
-    }); 
+const initGames = (gamename) => {
+    getGames(gamename); 
 }
     initGames();

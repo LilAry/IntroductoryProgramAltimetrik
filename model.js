@@ -6,10 +6,31 @@ const detailTrailers=[];
 
 
 async function getTrailers(gameId) {
-    const requestResult = await fetch(`https://api.rawg.io/api/games/${gameId}/movies?key=${key}`).then(manageErrors);
-    const data = await requestResult.json();
+    let requestResult = null;
+    let data = null;
+    try{
+        requestResult = await fetch(`https://api.rawg.io/api/games/${gameId}/movies?key=${key}`);
+        data = await requestResult.json();
+    }
+    catch(err){
+        alert("cant get that info");
+    }
     return data;
 }
+// function getTrailers(gameId) {
+//     let cargarTrailer=[];
+//     fetch(`https://api.rawg.io/api/games/${gameId}/movies?key=${key}`)
+//     .then(manageErrors)
+//     .then(response => response.json())
+//     .then(data => {
+//         cargarTrailer.push(data);
+//     }).catch(function(error) { 
+//         console.log('Error Code   : ' + error.status );
+//         console.log('Error Reason : ' + error.statusText);
+//     })
+//     return 
+// };
+
 
 
 const showPlatformsModal = platforms =>{
@@ -294,12 +315,20 @@ async function openModal(gameId) {
     } 
 }
 async function GetDetailsForModal(database,gameId){
-    let newListDetalle=[];
-    const requestResult = await fetch(`https://api.rawg.io/api/games/${gameId}?key=${key}`);
-    const game = await requestResult.json();
-    newListDetalle.push(game); 
-    database = newListDetalle;
-    return database;
+        let newListDetalle=[];
+        let requestResult = null;
+        let game = null;
+        try{
+            requestResult = await fetch(`https://api.rawg.io/api/games/${gameId}?key=${key}`);
+            game = await requestResult.json();
+        }
+        catch(err){
+            alert("Cant do this");
+        }
+        newListDetalle.push(game); 
+        database = newListDetalle;
+        
+        return database;
 }
 
 function openModal1() {

@@ -106,7 +106,7 @@ function NoResultsCard(data) {
     userCardContainer.append(card);
 }
 
-inputSearch.addEventListener ("keyup", async (e) => {
+inputSearch.addEventListener ("keyup", (e) => {
     clearTimeout(timeout);
     timeout = setTimeout(function () {
         const value = e.target.value.toLowerCase();

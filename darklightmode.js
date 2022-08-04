@@ -4,7 +4,7 @@ let darkMode = localStorage.getItem('darkMode');
 const darkModeToggle = document.querySelector('#chk');
 const darkModeToggle2 = document.querySelector('#chk2');
 const labelBL = document.querySelector('#labelBL');
-const ball = document.querySelector('#ball');
+const ball = document.querySelector('.ball');
 
 
 const enableDarkMode = () => {
